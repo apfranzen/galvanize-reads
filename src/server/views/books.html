@@ -1,0 +1,39 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+  <h1>All the Books</h1>
+
+<div class="container">
+  <br>
+  <a href="/people/new" class="btn btn-success btn-md">Add Person</a>
+  <br><br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <!-- <th>Author</th> -->
+        <th>Genre</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in books %}
+        <tr>
+          <td>{{book.id}}</td>
+          <td>{{book.title}}</td>
+          <!-- <td>{{author.author}}</td> -->
+          <td>{{book.genre}}</td>
+          <td>{{book.description}}</td>
+          <td><button class="btn btn-sm btn-danger delete-btn" data-id="{{person.id}}">X</button></td>
+          <td><button type="button" class="btn btn-primary btn-sm update-btn" data-toggle="modal" data-target="#myModal" data-id="{{person.id}}" data-username="{{person.username}}" data-hobby="{{person.hobby}}">Update</button></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
