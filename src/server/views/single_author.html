@@ -4,32 +4,32 @@
 
 {% block content %}
 
-  <h1>All the Authors</h1>
+  <h1>Single Book</h1>
 
 <div class="container">
   <br>
-  <a href="/authors/new" class="btn btn-success btn-md">Add Author</a>
+  <!-- <a href="/people/new" class="btn btn-success btn-md">Single Author</a> -->
   <br><br>
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>Portrait</th>
         <th>Name</th>
         <th>Biography</th>
-        <th>Portrait</th>
         <!-- <th>Author</th> -->
         <!-- <th>Genre</th>
         <th>Description</th> -->
       </tr>
     </thead>
     <tbody>
-      {% for author in authors %}
+      {% for attribute in author %}
         <tr>
-          <td>{{author.first_name}} {{author.last_name}}</td>
-          <!-- <td>{{author.title}}</td> -->
+          <td><a href="/authors/{{attribute.id}}"><img src="{{attribute.portrait_url}}" alt="portrait" class="portrait"></a></td>
+          <td>{{attribute.first_name}} {{attribute.last_name}}</td>
+          <!-- <td>{{attribute.title}}</td> -->
           <!-- <td>{{author.author}}</td> -->
-          <!-- <td>{{author.genre}}</td> -->
-          <td>{{author.biography}}</td>
-          <td><a href="/authors/{{author.id}}"><img src="{{author.portrait_url}}" alt="test" class="portrait"></a></td>
+          <td>{{attribute.biography}}</td>
+          <!-- <td>{{attribute.description}}</td> -->
           <td><button type="button" class="btn btn-primary btn-sm update-btn" data-toggle="modal" data-target="#myModal" data-id="{{person.id}}" data-username="{{person.username}}" data-hobby="{{person.hobby}}">Edit</button></td>
           <td><button class="btn btn-sm btn-danger delete-btn" data-id="{{person.id}}">Remove</button></td>
         </tr>

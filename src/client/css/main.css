@@ -6,3 +6,14 @@ body {
 a {
   color: #00B7FF;
 }
+.cover, .portrait {
+  max-width:110px;
+}
+
+.add_author_select {
+  width: 550px;
+}
+
+.author_select {
+  width: 550px;
+}

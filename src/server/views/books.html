@@ -8,13 +8,15 @@
 
 <div class="container">
   <br>
-  <a href="/people/new" class="btn btn-success btn-md">Add Person</a>
+  <a href="/books/new" class="btn btn-success btn-md">Add Book</a>
   <br><br>
   <table class="table table-striped">
     <thead>
       <tr>
         <th>#</th>
+        <th>Cover</th>
         <th>Title</th>
+        <th>Author</th>
         <!-- <th>Author</th> -->
         <th>Genre</th>
         <th>Description</th>
@@ -24,12 +26,14 @@
       {% for book in books %}
         <tr>
           <td>{{book.id}}</td>
+          <td><a href="/books/{{book.id}}"><img src="{{book.cover_url}}" alt="test" class="cover"></a></td>
           <td>{{book.title}}</td>
           <!-- <td>{{author.author}}</td> -->
+          <td>{{book.first_name}} {{book.last_name}}</td>
           <td>{{book.genre}}</td>
           <td>{{book.description}}</td>
-          <td><button class="btn btn-sm btn-danger delete-btn" data-id="{{person.id}}">X</button></td>
-          <td><button type="button" class="btn btn-primary btn-sm update-btn" data-toggle="modal" data-target="#myModal" data-id="{{person.id}}" data-username="{{person.username}}" data-hobby="{{person.hobby}}">Update</button></td>
+          <td><button type="button" class="btn btn-primary btn-sm update-btn" data-toggle="modal" data-target="#myModal" data-id="{{person.id}}" data-username="{{person.username}}" data-hobby="{{person.hobby}}">Edit</button></td>
+          <td><button class="btn btn-sm btn-danger delete-btn" data-id="{{person.id}}">Remove</button></td>
         </tr>
       {% endfor %}
     </tbody>

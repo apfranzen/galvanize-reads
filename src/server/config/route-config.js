@@ -7,12 +7,12 @@
     // *** routes *** //
     const routes = require('../routes/index');
     const bookRoutes = require('../routes/books');
-    // const authorRoutes = require('../routes/authors');
+    const authorRoutes = require('../routes/authors');
 
     // *** register routes *** //
     app.use('/', routes);
     app.use('/books', bookRoutes);
-    // app.use('/authors', bookRoutes);
+    app.use('/authors', authorRoutes);
   };
 
 })(module.exports);

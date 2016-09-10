@@ -1,0 +1,38 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+  <h1>Delete Book</h1>
+
+<div class="container">
+  <br>
+  <br><br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <!-- <th>Author</th> -->
+        <th>Genre</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for attribute in book %}
+        <tr>
+          <td>{{attribute.id}}</td>
+          <td>{{attribute.title}}</td>
+          <!-- <td>{{author.author}}</td> -->
+          <td>{{attribute.genre}}</td>
+          <td>{{attribute.description}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a href="/books/delete" class="btn btn-danger btn-md">Delete Book</a>
+</div>
+
+{% endblock %}

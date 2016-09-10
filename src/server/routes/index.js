@@ -5,7 +5,8 @@ const knex = require('../db/knex');
 const indexController = require('../controllers/index');
 
 router.get('/', function (req, res, next) {
-  res.redirect('/books');
+  // res.redirect('/books');
+  res.render('index');
 });
 
 module.exports = router;

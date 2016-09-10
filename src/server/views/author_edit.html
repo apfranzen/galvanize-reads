@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <h1>Edit Author</h1>
+  <br>
+  <form method="POST" action="/authors/edit">
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      <input type="text" class="form-control" name="first_name">
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name</label>
+      <input type="text" class="form-control" name="last_name">
+    </div>
+    <div class="form-group">
+      <label for="portarit_url">Portrait URL</label>
+      <input type="text" class="form-control" name="portarit_url">
+    </div>
+    <div class="form-group">
+      <label for="biography">Biography</label>
+      <textarea class="form-control" rows="3" name="biography"></textarea>
+    </div>
+    <select class="form-control">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <button class="btn btn-sm btn-danger delete-btn" data-id="{{person.id}}">Remove</button>
+    <button type="add_author" class="btn btn-sml">Add Book</button>
+    <button type="edit_book" class="btn btn-lrg">Edit Author</button>
+  </form>
+</div>
+
+{% endblock %}

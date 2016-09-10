@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <h1>Add New Book</h1>
+  <br>
+  <form method="POST" action="/books/new">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" name="title">
+    </div>
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <input type="text" class="form-control" name="genre">
+    </div>
+    <div class="form-group">
+      <label for="image_url">Cover Image URL</label>
+      <input type="text" class="form-control" name="image_url">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" rows="3" name="description"></textarea>
+    </div>
+    <select class="form-control">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <button class="btn btn-sm btn-danger delete-btn" data-id="{{person.id}}">Remove</button>
+    <button type="add_author" class="btn btn-sml">Add Author</button>
+    <button type="add_book" class="btn btn-lrg">Add Book</button>
+  </form>
+</div>
+
+{% endblock %}

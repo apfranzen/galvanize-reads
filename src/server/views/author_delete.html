@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+  <h1>Delete Author</h1>
+
+  <div class="container">
+    <br>
+    <!-- <a href="/people/new" class="btn btn-success btn-md">Single Author</a> -->
+    <br><br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Biography</th>
+          <!-- <th>Author</th> -->
+          <!-- <th>Genre</th>
+          <th>Description</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        {% for attribute in author %}
+          <tr>
+            <td>{{attribute.first_name}} {{attribute.last_name}}</td>
+            <!-- <td>{{attribute.title}}</td> -->
+            <!-- <td>{{author.author}}</td> -->
+            <td>{{attribute.biography}}</td>
+            <!-- <td>{{attribute.description}}</td> -->
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <a href="/books/delete" class="btn btn-danger btn-md">Delete Book</a>
+
+  </div>
+
+{% endblock %}
