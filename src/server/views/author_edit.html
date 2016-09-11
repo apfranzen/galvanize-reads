@@ -31,9 +31,9 @@
       <option>4</option>
       <option>5</option>
     </select>
-    <button class="btn btn-sm btn-danger delete-btn" data-id="{{person.id}}">Remove {{authors.first_name}} {{authors.last_name}} </button>
+    <button class="btn btn-sm btn-danger delete-btn">Remove {{authors.first_name}} {{authors.last_name}} </button>
     <button type="add_author" class="btn btn-sml">Add Book</button>
-    <button type="edit_book" class="btn btn-lrg" href="/authors/{{authors.id}}/edit">Edit Author</button>
+    <button type="edit_book" class="btn btn-lrg author_edit_submit" data-id="{{author.id}}">Edit Author</button>
   </form>
 </div>
 

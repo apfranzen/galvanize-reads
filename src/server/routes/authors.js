@@ -59,6 +59,43 @@ router.get('/:id/edit', function (req, res, next) {
   });
 });
 
+router.put('/:id/edit/submit', (req, res, next) => {
+  let id = parseInt(req.params.id);
+  console.log(id);
+  let updatedFirstName = req.body.first_name;
+  let updatedLastName = req.body.last_name;
+  let updatedPortraitUrl = req.body.portrait_url;
+  let updatedBiography = req.body.biography;
+  knex('authors')
+  .update({
+    first_name: updatedFirstName,
+    last_name: updatedLastName,
+    portrait_url: updatedPortraitUrl,
+    biography: updatedBiography,
+  })
+  .where('id', id)
+  .returning('*')
+  .then((results) => {
+    if (results.length) {
+      res.status(200).json({
+        status: 'success',
+        message: `${results[0].first_name}, ${results[0].last_name} has been updated!`
+      });
+    } else {
+      res.status(404).json({
+        status: 'error',
+        message: 'That id does not exist'
+      });
+    }
+  })
+  .catch((err) => {
+    res.status(500).json({
+      status: 'error',
+      message: 'Updated Failed'
+    });
+  });
+});
+
 router.delete('/:id/delete', (req, res, next) => {
   const id = parseInt(req.params.id);
   knex('authors_books')
