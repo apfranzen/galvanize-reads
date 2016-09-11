@@ -13,6 +13,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>Biography</th>
         <th>Portrait</th>
@@ -24,14 +25,16 @@
     <tbody>
       {% for author in authors %}
         <tr>
+          <td>{{author.id}}
           <td>{{author.first_name}} {{author.last_name}}</td>
           <!-- <td>{{author.title}}</td> -->
           <!-- <td>{{author.author}}</td> -->
           <!-- <td>{{author.genre}}</td> -->
           <td>{{author.biography}}</td>
           <td><a href="/authors/{{author.id}}"><img src="{{author.portrait_url}}" alt="test" class="portrait"></a></td>
-          <td><button type="button" class="btn btn-primary btn-sm update-btn" data-toggle="modal" data-target="#myModal" data-id="{{person.id}}" data-username="{{person.username}}" data-hobby="{{person.hobby}}">Edit</button></td>
-          <td><button class="btn btn-sm btn-danger delete-btn" data-id="{{person.id}}">Remove</button></td>
+          <!-- <td><button type="button" class="btn btn-primary btn-sm update-btn" data-id="{{author.id}}" id="author-edit">Edit</button></td> -->
+          <td><a href="/authors/{{author.id}}/edit" class="button" id="author-edit" data-id="{{author.id}}">Edit Author</a></td>
+          <td><button class="btn btn-sm btn-danger delete-btn" id="author-delete" data-id="{{author.id}}">Remove</button></td>
         </tr>
       {% endfor %}
     </tbody>

@@ -33,7 +33,7 @@
           <td>{{book.genre}}</td>
           <td>{{book.description}}</td>
           <td><button type="button" class="btn btn-primary btn-sm update-btn" data-toggle="modal" data-target="#myModal" data-id="{{person.id}}" data-username="{{person.username}}" data-hobby="{{person.hobby}}">Edit</button></td>
-          <td><button class="btn btn-sm btn-danger delete-btn" data-id="{{person.id}}">Remove</button></td>
+          <td><button class="btn btn-sm btn-danger book-delete-btn" data-id="{{book.id}}" id="xyz">Remove</button></td>
         </tr>
       {% endfor %}
     </tbody>

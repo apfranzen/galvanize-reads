@@ -1,6 +1,7 @@
 - [x] authors and books join
 - [ ] add info to add book and author page
 - [ ] pseudo code the edit and delete - ajax?
+- [ ] remove authors from book /edit
 - [ ] change joins to left
 - [ ] remove unnecesary nunjuck for loop
 - [ ] implement code to populate multiple authors if necessary

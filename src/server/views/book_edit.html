@@ -16,15 +16,15 @@
     </div>
     <div class="form-group">
       <label for="genre">Genre</label>
-      <input type="text" class="form-control" name="genre" value="{{book.genre}}">
+      <input type="text" class="form-control" name="genre" value="{{book.genre}}" id="book-update-genre">
     </div>
     <div class="form-group">
       <label for="cover_url">Cover Image URL</label>
-      <input type="text" class="form-control" name="image_url" value="{{book.cover_url}}">
+      <input type="text" class="form-control" name="image_url" value="{{book.cover_url}}" id="book-update-cover-url">
     </div>
     <div class="form-group">
       <label for="description">Description</label>
-      <textarea class="form-control" rows="3" name="description">{{book.description}}</textarea>
+      <textarea class="form-control" rows="3" name="description" id="book-update-description">{{book.description}}</textarea>
     </div>
     <select size="3" name="selectionField" multiple="yes" class="author_select">
       <option value="{{book.first_name}} {{book.last_name}}"> {{book.first_name}} {{book.last_name}}
@@ -37,7 +37,7 @@
     </select>
     <button type="add_author" class="btn btn-sml">Add Author</button>
     <br>
-    <button type="edit_book" class="btn btn-lrg book_edit_submit">Edit Book</button>
+    <button type="edit_book" class="btn btn-lrg book_edit_submit" data-id="{{book.id}}" id="book-id">Edit Book</button>
   </form>
 </div>
 
