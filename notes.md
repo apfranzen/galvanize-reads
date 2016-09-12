@@ -1,7 +1,10 @@
 - [x] authors and books join
-- [ ] add info to add book and author page
-- [ ] pseudo code the edit and delete - ajax?
+- [x] add info to edit book and author page
+- [x] pseudo code the edit and delete - ajax?
+- [ ] add base html and css for pages
+- [ ] style the landing page
+- [ ] /new route for both
 - [ ] remove authors from book /edit
 - [ ] change joins to left
-- [ ] remove unnecesary nunjuck for loop
+- [ ] remove unnecessary nunjuck for loop
 - [ ] implement code to populate multiple authors if necessary

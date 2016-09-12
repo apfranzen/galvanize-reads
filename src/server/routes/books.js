@@ -60,20 +60,6 @@ router.put('/:id/edit/submit', (req, res, next) => {
   });
 });
 
-// router.get('/:id/delete', function (req, res, next) {
-//   let id = parseInt(req.params.id);
-//   knex('books')
-//   .where('id', id)
-//   .then((results) => {
-//     const renderObject = {};
-//     renderObject.book = results;
-//     res.render('book_delete', renderObject);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
-// });
-
 router.delete('/:id/delete', (req, res, next) => {
   const id = parseInt(req.params.id);
   knex('authors_books')

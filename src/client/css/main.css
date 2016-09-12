@@ -1,28 +1,50 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.landing {
+   display: inline;
+   border: 2px solid;
+   height: 200px;
+   width: 200px;
 }
 
-a {
-  color: #00B7FF;
+.book-landing-btn {
+  background-color: #3399ff;
 }
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.author-landing-btn {
+  background-color: #ff4d4d;
+  float: left;
+}
+
+.landing_text {
+  font-size: 50px;
+}
+
 .cover, .portrait {
   max-width:110px;
+  float: right;
 }
 
-.add_author_select {
-  width: 550px;
+.button_landing {
+  display: inline-block;
+  border-radius: 4px;
+  /*background-color: #f4511e;*/
+  border: none;
+  /*color: #FFFFFF;*/
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 400px;
+  height: 400px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 }
 
-.author_select {
-  width: 550px;
-}
-
-a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-    color: initial;
+/*a {
+  color: #00B7FF;
 }

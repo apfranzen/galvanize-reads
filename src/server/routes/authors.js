@@ -59,6 +59,29 @@ router.get('/:id/edit', function (req, res, next) {
   });
 });
 
+router.post('/new/submit', (req, res, next) => {
+  // grab the values to add to the db via req.body
+  const first_name = req.body.first_name;
+  const last_name = req.body.last_name;
+  const portrait_url = req.body.cover_url;
+  const biography = req.body.biography;
+  // add values to database
+  knex('authors').insert({
+    first_name: first_name,
+    last_name: last_name,
+    portrait_url: portrait_url,
+    biography: biography
+  })
+  .then((results) => {
+    // redirect user
+    res.redirect('/authors');
+  })
+  .catch((err) => {
+    console.log(err);
+    return next(err);
+  });
+});
+
 router.put('/:id/edit/submit', (req, res, next) => {
   let id = parseInt(req.params.id);
   console.log(id);
@@ -71,7 +94,7 @@ router.put('/:id/edit/submit', (req, res, next) => {
     first_name: updatedFirstName,
     last_name: updatedLastName,
     portrait_url: updatedPortraitUrl,
-    biography: updatedBiography,
+    biography: updatedBiography
   })
   .where('id', id)
   .returning('*')

@@ -1,4 +1,43 @@
 (function () {
+  // <---Redirect to /books from main page--->
+  $(document).on('click', '.books', function(e) {
+    e.preventDefault();
+    console.log('clicked');
+    window.location.href ="/books";
+  });
+  // <---Redirect to /authors from main page--->
+  $(document).on('click', '.authors', function(e) {
+    e.preventDefault();
+    console.log('clicked');
+    window.location.href ="/authors";
+  });
+
+  // <---Add Author--->
+  $(document).on('click', '.add_author', function(e) {
+    e.preventDefault();
+    const $authorID = $('.author_edit_submit').attr('data-id');
+    const $FirstName = $('#author-first_name').val();
+    const $LastName = $('#author-last_name').val();
+    const $Portrait = $('#author-portrait_url').val();
+    const $Biography = $('#book-biography').val();
+    const newAuthor = {
+      first_name: $FirstName,
+      last_name: $LastName,
+      portrait_url: $Portrait,
+      biography: $Biography
+    };
+    $.ajax({
+      type: 'POST',
+      url: `/authors/new/submit`,
+      data: newAuthor
+    })
+    .done((data) => {
+      console.log('ajax sent');
+    })
+    .fail((err) => {
+      console.log(err);
+    });
+  });
 
   // <---Delete Single Book--->
   $(document).on('click', '.book-delete-btn', function(e) {
@@ -9,8 +48,10 @@
       type: 'DELETE',
       url: `/books/${$bookID}/delete`
     });
+    location.reload();
   });
 
+  // <---Delete Single Book--->
   $(document).on('click', '#author-delete', function(e) {
     e.preventDefault();
     const $this = $(this);
@@ -20,6 +61,7 @@
       type: 'DELETE',
       url: `/authors/${$authorID}/delete`
     });
+    location.reload();
   });
 
   // <---Edit Book--->
