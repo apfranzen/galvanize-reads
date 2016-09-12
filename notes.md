@@ -3,7 +3,8 @@
 - [x] pseudo code the edit and delete - ajax?
 - [ ] add base html and css for pages
 - [ ] style the landing page
-- [ ] /new route for both
+- [ ] fix /new route for authors
+- [ ] /new route for books
 - [ ] remove authors from book /edit
 - [ ] change joins to left
 - [ ] remove unnecessary nunjuck for loop
